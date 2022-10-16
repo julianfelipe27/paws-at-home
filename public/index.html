@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--
+ @license
+ Copyright 2019 Google LLC. All Rights Reserved.
+ SPDX-License-Identifier: Apache-2.0
+-->
+<!-- [START maps_map_simple] -->
+<html>
+
+<head>
+  <title>PawsAtHome</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="./style.css" />
+  <script src="./index.js"></script>
+</head>
+
+<body>
+  <div style="width: 100%;height:90px;background:#18A0FB;display: flex;">
+    <h1 style="color:whitesmoke; font-size: 24px;margin:auto;font-family: Roboto;">PawsAtHome</h1>
+  </div>
+  <div style="width:100%;heigt:150px;display: flex;padding:15px "><p style="margin:0; font-size:20px; color:#18A0FB; ">Hello <strong>Juliana</strong>, <span style="color:black;font-weight: bold;">Simon</span> has walked 1.5km today. He has been just around neighbourhood</p></div>
+  <div style="width: 100%;">
+    <div id="photo" style="border-radius:50%; width:90px; height:90px;border:1px solid #18A0FB;position:absolute;z-index:999; overflow: visible;background:url(./profile.jfif); background-size: cover; background-repeat: no-repeat;left:70%; top:24%;"><p style="text-align:center;height:20px;margin-top:95px;border-radius:20px;background:rgba(98, 232, 98,0.5); border: 0.1px solid green;width:100%;color:green;">100%</p></div>
+    <div id="map" style="position: absolute; z-index:1;width:100%;"></div>
+  </div>
+  <div class="bottom-navbar" style="width: 91.8%; height: 125px; top:503px; display: flex; background:white; position: fixed;border-radius: 20px; border: 1px solid #18A0FB; z-index: 2; justify-content: space-around; ">
+  <button style="width:33%;background:url(./huellita_lupa.svg);border:none; background-size: 70px; background-repeat: no-repeat;background-position-y:center;background-position-x:center;"></button>
+  <button style="width:33%;background:url(./huellita.svg);border: none; background-size: 60px; background-repeat: no-repeat;background-position-y:center;background-position-x:center;"></button>
+  <button style="width:33%;;background:url(./perfil.svg); border: none; background-size:70px;background-repeat: no-repeat;background-position-y:center;background-position-x:center;"></button>
+  </div>
+  
+
+  <!-- 
+     The `defer` attribute causes the callback to execute after the full HTML
+     document has been parsed. For non-blocking uses, avoiding race conditions,
+     and consistent behavior across browsers, consider loading using Promises
+     with https://www.npmjs.com/package/@googlemaps/js-api-loader.
+    -->
+  <button id="engage-digital-click-to-call-btn" class="hidden">Call</button>
+  <div class="alert hidden" style="width: 80%;" id='engage-digital-alert'></div>
+  <video class="localVideo hidden" id="engage-digital-local-video" autoplay loop muted playsinline></video>
+  <video class="remoteVideo hidden" id="engage-digital-remote-video" autoplay loop playsinline></video>
+  <script src="engage-digital-click-to-call-config.js"></script>
+  <script src="engage-digital-click-to-call.js"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?libraries=drawing&key=AIzaSyDDCpCZizcgzdmYW1keKJjjrnJYaQrmgRQ&callback=initMap"></script>
+
+</body>
+
+</html>
+<!-- [END maps_map_simple] -->
